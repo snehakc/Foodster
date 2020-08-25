@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">  
+</head>
+<body>
+  <div class="content">
+    <div class="common">
+      <h1>{{ title }}</h1>
+      <form class="form">
+        <mat-form-field class="textsearch" floatLabel="never">
+          <input matInput type="search" placeholder="Enter a city" aria-label="Number" matInput [formControl]="searchControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option class="textsearch" *ngFor="let location of locations" [value]="location.name" (onSelectionChange)="onSelectionChanged($event,location)">
+                <span class="lnr lnr-map-marker"></span> {{ location.name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body{
+width: 100%;
+    margin: 0px 0px 0px 0px
+}
+/*body{
+    background: #197bbd;
+    font-family: "Arial Black", Helvetica, sans-serif;
+    color: #f0f4f7;
+    padding-left: 0;
+    font-stretch: extra-expanded;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh
+}*/
+.example-spacer {
+    flex: 1 1 auto;
+  }

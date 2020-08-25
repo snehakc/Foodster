@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+  <mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <h1>Foodster</h1>
+      <span class="example-spacer"></span>
+      <span>{{cityName}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="grid_container">
+    <p> All Restraunts in {{city}} </p>
+    <mat-grid-list cols="4" rowHeight="1:1" gutterSize="5">
+      <mat-grid-tile *ngFor="let restaurant of restraunts">
+
+        <mat-card (click)="OnClick($event,restaurant)" class="card">
+          <img mat-card-image src="http://via.placeholder.com/300x200" alt="defaultphoto">
+          <mat-card-content>
+            <mat-card-subtitle class="name">{{restaurant.restaurant.name}}</mat-card-subtitle>
+            <mat-card-subtitle class="subtitle">{{restaurant.restaurant.cuisines}}</mat-card-subtitle>
+            <mat-card-subtitle>
+              <div id="rating_bar" style="float: left;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <mat-card-subtitle class="subtitle">{{restaurant.restaurant.user_rating.votes}} ratings</mat-card-subtitle>
+            </mat-card-subtitle>
+          </mat-card-content>
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+
+</body>
+
+</html>
